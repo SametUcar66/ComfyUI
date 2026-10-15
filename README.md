@@ -34,195 +34,196 @@
 <img width="1590" height="795" alt="ComfyUI Screenshot" src="https://github.com/user-attachments/assets/36e065e0-bfae-4456-8c7f-8369d5ea48a2" />
 <br>
 </div>
+ComfyUI, her modele, her parametreye ve her çıktıya hükmetmek isteyen görsel profesyoneller için geliştirilmiş yapay zeka üretim motorudur. Güçlü ve modüler düğüm grafiği (node graph) arayüzü, yaratıcıların görsel, video, 3D model, ses ve çok daha fazlasını üretmesini sağlar...
+- ComfyUI, en yeni açık kaynaklı son teknoloji modelleri yerel olarak (native) destekler.
+- Yerel tüketici donanımlarına odaklanan, dünyadaki açık ara en optimize difüzyon modeli çıkarım (inference) motorudur.
+- Son teknoloji asenkron ağırlık akışı (weight streaming) teknolojimiz sayesinde, en büyük açık kaynaklı modelleri bile 4GB vram + 8GB ram gibi düşük donanımlarda nispeten hızlı bir şekilde (GPU işlem gücünüzü doyurarak) çalıştırabilir.
+- [Partner düğümleri](https://docs.comfy.org/tutorials/partner-nodes/overview#partner-nodes), Nano Banana, Seedance, Hunyuan3D vb. en iyi kapalı kaynaklı modellere erişim sağlar.
+- Windows, Linux ve macOS üzerinde; [masaüstü uygulamamız](https://www.comfy.org/download), [portable kurulumumuz](#installing) ile yerel olarak ya da [bulut](https://www.comfy.org/cloud) üzerinden kullanılabilir.
+- En karmaşık iş akışları bile App Mode sayesinde basit bir arayüz üzerinden kullanıma sunulabilir.
+- API uç noktalarımız sayesinde üretim hatlarına (production pipeline) sorunsuz bir şekilde entegre olur.
 
-ComfyUI is the AI creation engine for visual professionals who demand control over every model, every parameter, and every output. Its powerful and modular node graph interface empowers creatives to generate images, videos, 3D models, audio, and more...
-- ComfyUI natively supports the latest open-source state of the art models.
-- It is by far the most optimized inference engine for diffusion models in the world with a focus on local consumer hardware.
-- Can run even the biggest open source models on as low as 4GB vram + 8GB ram relatively quickly (saturating your GPU compute) using our state of the art asynchronous weight streaming technology.
-- [Partner nodes](https://docs.comfy.org/tutorials/partner-nodes/overview#partner-nodes) provide access to the best closed source models such as Nano Banana, Seedance, Hunyuan3D, etc.
-- It is available on Windows, Linux, and macOS, locally with our [desktop application](https://www.comfy.org/download), our [portable install](#installing) or on our [cloud](https://www.comfy.org/cloud).
-- The most sophisticated workflows can be exposed through a simple UI thanks to App Mode.
-- It integrates seamlessly into production pipelines with our API endpoints.
+## Başlarken
 
-## Get Started
+### Yerel
 
-### Local
+#### [Masaüstü Uygulaması](https://www.comfy.org/download)
+- Başlamanın en kolay yolu.
+- Windows ve macOS için mevcut.
 
-#### [Desktop Application](https://www.comfy.org/download)
-- The easiest way to get started.
-- Available on Windows & macOS.
+#### [Manuel Kurulum](#manual-install-windows-linux)
+Tüm işletim sistemlerini ve GPU türlerini (NVIDIA, AMD, Intel, Apple Silicon, Ascend) destekler.
 
-#### [Manual Install](#manual-install-windows-linux)
-Supports all operating systems and GPU types (NVIDIA, AMD, Intel, Apple Silicon, Ascend).
-
-### Cloud
+### Bulut
 
 #### [Comfy Cloud](https://www.comfy.org/cloud)
-- Our official paid cloud version for those who can't afford local hardware.
+- Yerel donanımı karşılayamayanlar için resmi ücretli bulut sürümümüz.
 
-## Examples
-See what ComfyUI can do with the [newer template workflows](https://comfy.org/workflows) or old [example workflows](https://comfyanonymous.github.io/ComfyUI_examples/).
+## Örnekler
+ComfyUI'ın neler yapabildiğini [yeni şablon iş akışları](https://comfy.org/workflows) veya eski [örnek iş akışları](https://comfyanonymous.github.io/ComfyUI_examples/) ile görebilirsiniz.
 
-## Features
-- A visual node graph for building and reusing image, video, audio, 3D, and text workflows without code.
-- Reusable subgraphs, workflow templates, App Mode, and a local API for integrating workflows into applications.
-- Efficient local execution with asynchronous queueing, partial graph re-execution, smart VRAM and RAM management, model offloading, and support for quantized models.
-- Broad native model support. This is a representative list; browse the [workflow library](https://comfy.org/workflows/) for maintained, ready-to-run templates.
-  - [Image generation](https://comfy.org/workflows/tag/text-to-image/): Stable Diffusion 1.5, SDXL, SD3.5, Flux.1, Flux.2, Qwen Image, Z-Image, Hunyuan Image 2.1, HiDream, Lumina Image 2.0, Chroma, Anima, LongCat Image, Ideogram 4, Krea 2, MageFlow, Microsoft Lens, PixelDiT, Kandinsky 5, and Ernie Image.
-  - [Image editing](https://comfy.org/workflows/tag/image-edit/): Flux Kontext, Flux.2 Klein, Qwen Image Edit, HiDream E1.1 and O1, OmniGen2, Boogu, JoyImage Edit, MageFlow Edit, and LongCat Image Edit.
-  - [Video generation](https://comfy.org/workflows/tag/video-generation/): Wan 2.1 and 2.2, LTX-Video 2 and 2.3, HunyuanVideo 1.5, Kandinsky 5 Video, CogVideoX, Cosmos Predict2, Bernini-R, SCAIL 2, and Mochi.
-  - [Audio and video generation](https://comfy.org/workflows/): MiniMax H3 and LTX-AV.
-  - [Audio generation](https://comfy.org/workflows/tag/text-to-audio/): ACE-Step 1.5, Stable Audio 3, MiniMax Music 3 and Yue 2.
-  - [3D and vision](https://comfy.org/workflows/): Hunyuan3D 2.1, TripoSplat, SeedVR2, SUPIR, Depth Anything 3, MoGe, SAM 3 and 3.1, RT-DETRv4, and BiRefNet.
-  - [Text generation](https://comfy.org/workflows/tag/text-generation/): Gemma 3 and 4, Qwen3, Qwen3.5, and Qwen3-VL, including multimodal inputs.
-- Load complete checkpoints or separate diffusion models, VAEs, text encoders, LoRAs, ControlNets, adapters, and upscalers from supported model formats.
-- Built-in tools for inpainting, outpainting, reference conditioning, masks and compositing, model merging, upscaling, frame interpolation, segmentation, depth estimation, and media processing.
-- Save and load workflows as JSON, or recover complete workflows and seeds from supported generated media.
-- Runs fully offline: core does not download anything unless you request it. Use `--offline` to disable the optional paid [Comfy API nodes](https://docs.comfy.org/tutorials/api-nodes/overview) and force all built-in functionality to stay offline, or `--disable-partner-nodes` to only disable the API nodes.
-- Extend ComfyUI with custom nodes
-- Configure additional model locations with [`extra_model_paths.yaml`](extra_model_paths.yaml.example).
-- Support for saving and loading high bit depth images and videos: 16 bit PNG images, 32 bit EXR, 10 bit AVIF are supported and more.
-- Support for saving and loading HDR videos and images in various formats.
+## Özellikler
+- Görsel, video, ses, 3D ve metin iş akışlarını kod yazmadan oluşturmak ve yeniden kullanmak için görsel bir düğüm grafiği.
+- Yeniden kullanılabilir alt grafikler (subgraph), iş akışı şablonları, App Mode ve iş akışlarını uygulamalara entegre etmek için yerel bir API.
+- Asenkron kuyruklama, kısmi grafik yeniden çalıştırma, akıllı VRAM ve RAM yönetimi, model boşaltma (offloading) ve nicemlenmiş (quantized) model desteği ile verimli yerel çalıştırma.
+- Geniş yerel model desteği. Bu liste örnek niteliğindedir; bakımı yapılan, kullanıma hazır şablonlar için [iş akışı kütüphanesine](https://comfy.org/workflows/) göz atın.
+  - [Görsel üretimi](https://comfy.org/workflows/tag/text-to-image/): Stable Diffusion 1.5, SDXL, SD3.5, Flux.1, Flux.2, Qwen Image, Z-Image, Hunyuan Image 2.1, HiDream, Lumina Image 2.0, Chroma, Anima, LongCat Image, Ideogram 4, Krea 2, MageFlow, Microsoft Lens, PixelDiT, Kandinsky 5 ve Ernie Image.
+  - [Görsel düzenleme](https://comfy.org/workflows/tag/image-edit/): Flux Kontext, Flux.2 Klein, Qwen Image Edit, HiDream E1.1 ve O1, OmniGen2, Boogu, JoyImage Edit, MageFlow Edit ve LongCat Image Edit.
+  - [Video üretimi](https://comfy.org/workflows/tag/video-generation/): Wan 2.1 ve 2.2, LTX-Video 2 ve 2.3, HunyuanVideo 1.5, Kandinsky 5 Video, CogVideoX, Cosmos Predict2, Bernini-R, SCAIL 2 ve Mochi.
+  - [Ses ve video üretimi](https://comfy.org/workflows/): MiniMax H3 ve LTX-AV.
+  - [Ses üretimi](https://comfy.org/workflows/tag/text-to-audio/): ACE-Step 1.5, Stable Audio 3, MiniMax Music 3 ve Yue 2.
+  - [3D ve görü (vision)](https://comfy.org/workflows/): Hunyuan3D 2.1, TripoSplat, SeedVR2, SUPIR, Depth Anything 3, MoGe, SAM 3 ve 3.1, RT-DETRv4 ve BiRefNet.
+  - [Metin üretimi](https://comfy.org/workflows/tag/text-generation/): Gemma 3 ve 4, Qwen3, Qwen3.5 ve Qwen3-VL (çok modlu girdiler dahil).
+- Tam checkpoint'leri ya da ayrı difüzyon modellerini, VAE'leri, metin kodlayıcıları (text encoder), LoRA'ları, ControlNet'leri, adaptörleri ve upscaler'ları desteklenen model formatlarından yükleyin.
+- Inpainting, outpainting, referans koşullandırma (reference conditioning), maskeler ve kompozitleme, model birleştirme, upscale, kare interpolasyonu, segmentasyon, derinlik tahmini ve medya işleme için yerleşik araçlar.
+- İş akışlarını JSON olarak kaydedin ve yükleyin ya da desteklenen üretilmiş medyalardan eksiksiz iş akışlarını ve seed'leri geri getirin.
+- Tamamen çevrimdışı çalışır: siz istemedikçe çekirdek (core) hiçbir şey indirmez. İsteğe bağlı ücretli [Comfy API düğümlerini](https://docs.comfy.org/tutorials/api-nodes/overview) devre dışı bırakmak ve tüm yerleşik işlevlerin çevrimdışı kalmasını sağlamak için `--offline`, yalnızca API düğümlerini devre dışı bırakmak için `--disable-partner-nodes` kullanın.
+- ComfyUI'ı özel düğümlerle (custom nodes) genişletin
+- Ek model konumlarını [`extra_model_paths.yaml`](extra_model_paths.yaml.example) ile yapılandırın.
+- Yüksek bit derinliğine sahip görsellerin ve videoların kaydedilmesi ve yüklenmesi desteği: 16 bit PNG görseller, 32 bit EXR, 10 bit AVIF ve daha fazlası desteklenir.
+- Çeşitli formatlarda HDR video ve görsellerin kaydedilmesi ve yüklenmesi desteği.
 
 
-## Release Process
+## Sürüm Süreci
 
-ComfyUI follows a weekly release cycle targeting Monday but this regularly changes because of model releases or large changes to the codebase. There are three interconnected repositories:
+ComfyUI, pazartesi gününü hedefleyen haftalık bir sürüm döngüsünü takip eder; ancak model sürümleri veya kod tabanındaki büyük değişiklikler nedeniyle bu sıklıkla değişir. Birbiriyle bağlantılı üç depo vardır:
 
 1. **[ComfyUI Core](https://github.com/comfyanonymous/ComfyUI)**
-   - Releases a new major stable version (e.g., v0.7.0) roughly every 2 weeks.
-   - Starting from v0.4.0 patch versions will be used for fixes backported onto the current stable release.
-   - Minor versions will be used for releases off the master branch.
-   - Patch versions may still be used for releases on the master branch in cases where a backport would not make sense.
-   - Commits outside of the stable release tags may be very unstable and break many custom nodes.
-   - Serves as the foundation for the desktop release
+   - Yaklaşık 2 haftada bir yeni bir ana kararlı sürüm (ör. v0.7.0) yayınlar.
+   - v0.4.0'dan itibaren, mevcut kararlı sürüme geri taşınan (backport) düzeltmeler için yama (patch) sürümleri kullanılacaktır.
+   - Minör sürümler, master dalından (branch) çıkan sürümler için kullanılacaktır.
+   - Geri taşımanın mantıklı olmadığı durumlarda, master dalındaki sürümler için yine de yama sürümleri kullanılabilir.
+   - Kararlı sürüm etiketlerinin dışındaki commit'ler çok kararsız olabilir ve birçok özel düğümü bozabilir.
+   - Masaüstü sürümünün temelini oluşturur
 
 2. **[Comfy Desktop](https://github.com/Comfy-Org/Comfy-Desktop)**
-   - Builds a new release using the latest stable core version
+   - En son kararlı core sürümünü kullanarak yeni bir sürüm derler
 
 3. **[ComfyUI Frontend](https://github.com/Comfy-Org/ComfyUI_frontend)**
-   - Every 2+ weeks frontend updates are merged into the core repository
-   - Features are frozen for the upcoming core release
-   - Development continues for the next release cycle
+   - Her 2+ haftada bir frontend güncellemeleri core deposuna birleştirilir
+   - Yaklaşan core sürümü için özellikler dondurulur
+   - Bir sonraki sürüm döngüsü için geliştirme devam eder
 
-## Shortcuts
+## Kısayollar
 
-| Keybind                            | Explanation                                                                                                        |
+| Tuş Kombinasyonu                   | Açıklama                                                                                                           |
 |------------------------------------|--------------------------------------------------------------------------------------------------------------------|
-| `Ctrl` + `Enter`                      | Queue up current graph for generation                                                                              |
-| `Ctrl` + `Shift` + `Enter`              | Queue up current graph as first for generation                                                                     |
-| `Ctrl` + `Alt` + `Enter`                | Cancel current generation                                                                                          |
-| `Ctrl` + `Z`/`Ctrl` + `Y`                 | Undo/Redo                                                                                                          |
-| `Ctrl` + `S`                          | Save workflow                                                                                                      |
-| `Ctrl` + `O`                          | Load workflow                                                                                                      |
-| `Ctrl` + `A`                          | Select all nodes                                                                                                   |
-| `Alt `+ `C`                           | Collapse/uncollapse selected nodes                                                                                 |
-| `Ctrl` + `M`                          | Mute/unmute selected nodes                                                                                         |
-| `Ctrl` + `B`                           | Bypass selected nodes (acts like the node was removed from the graph and the wires reconnected through)            |
-| `Delete`/`Backspace`                   | Delete selected nodes                                                                                              |
-| `Ctrl` + `Backspace`                   | Delete the current graph                                                                                           |
-| `Space`                              | Move the canvas around when held and moving the cursor                                                             |
-| `Ctrl`/`Shift` + `Click`                 | Add clicked node to selection                                                                                      |
-| `Ctrl` + `C`/`Ctrl` + `V`                  | Copy and paste selected nodes (without maintaining connections to outputs of unselected nodes)                     |
-| `Ctrl` + `C`/`Ctrl` + `Shift` + `V`          | Copy and paste selected nodes (maintaining connections from outputs of unselected nodes to inputs of pasted nodes) |
-| `Shift` + `Drag`                       | Move multiple selected nodes at the same time                                                                      |
-| `Ctrl` + `D`                           | Load default graph                                                                                                 |
-| `Alt` + `+`                          | Canvas Zoom in                                                                                                     |
-| `Alt` + `-`                          | Canvas Zoom out                                                                                                    |
-| `Ctrl` + `Shift` + LMB + Vertical drag | Canvas Zoom in/out                                                                                                 |
-| `P`                                  | Pin/Unpin selected nodes                                                                                           |
-| `Ctrl` + `G`                           | Group selected nodes                                                                                               |
-| `Q`                                 | Toggle visibility of the queue                                                                                     |
-| `H`                                  | Toggle visibility of history                                                                                       |
-| `R`                                  | Refresh graph                                                                                                      |
-| `F`                                  | Show/Hide menu                                                                                                      |
-| `.`                                  | Fit view to selection (Whole graph when nothing is selected)                                                        |
-| Double-Click LMB                   | Open node quick search palette                                                                                     |
-| `Shift` + Drag                       | Move multiple wires at once                                                                                        |
-| `Ctrl` + `Alt` + LMB                   | Disconnect all wires from clicked slot                                                                             |
+| `Ctrl` + `Enter`                      | Mevcut grafiği üretim için kuyruğa ekler                                                                           |
+| `Ctrl` + `Shift` + `Enter`              | Mevcut grafiği üretim için kuyruğun en başına ekler                                                                |
+| `Ctrl` + `Alt` + `Enter`                | Mevcut üretimi iptal eder                                                                                          |
+| `Ctrl` + `Z`/`Ctrl` + `Y`                 | Geri al/Yinele                                                                                                     |
+| `Ctrl` + `S`                          | İş akışını kaydet                                                                                                  |
+| `Ctrl` + `O`                          | İş akışını yükle                                                                                                   |
+| `Ctrl` + `A`                          | Tüm düğümleri seç                                                                                                  |
+| `Alt `+ `C`                           | Seçili düğümleri daralt/genişlet                                                                                   |
+| `Ctrl` + `M`                          | Seçili düğümleri sessize al/sesini aç (mute/unmute)                                                                |
+| `Ctrl` + `B`                           | Seçili düğümleri atla (bypass) (düğüm grafikten kaldırılmış ve kablolar üzerinden yeniden bağlanmış gibi davranır) |
+| `Delete`/`Backspace`                   | Seçili düğümleri sil                                                                                               |
+| `Ctrl` + `Backspace`                   | Mevcut grafiği sil                                                                                                 |
+| `Space`                              | Basılı tutup imleci hareket ettirerek tuvali (canvas) kaydırır                                                     |
+| `Ctrl`/`Shift` + `Click`                 | Tıklanan düğümü seçime ekler                                                                                       |
+| `Ctrl` + `C`/`Ctrl` + `V`                  | Seçili düğümleri kopyala ve yapıştır (seçili olmayan düğümlerin çıkışlarıyla bağlantıları korunmaz)               |
+| `Ctrl` + `C`/`Ctrl` + `Shift` + `V`          | Seçili düğümleri kopyala ve yapıştır (seçili olmayan düğümlerin çıkışlarından yapıştırılan düğümlerin girişlerine bağlantılar korunur) |
+| `Shift` + `Drag`                       | Seçili birden fazla düğümü aynı anda taşır                                                                         |
+| `Ctrl` + `D`                           | Varsayılan grafiği yükler                                                                                          |
+| `Alt` + `+`                          | Tuvali yakınlaştırır                                                                                               |
+| `Alt` + `-`                          | Tuvali uzaklaştırır                                                                                                |
+| `Ctrl` + `Shift` + LMB + Dikey sürükleme | Tuvali yakınlaştırır/uzaklaştırır                                                                              |
+| `P`                                  | Seçili düğümleri sabitler/sabitlemeyi kaldırır                                                                     |
+| `Ctrl` + `G`                           | Seçili düğümleri gruplar                                                                                           |
+| `Q`                                 | Kuyruğun görünürlüğünü açar/kapatır                                                                                |
+| `H`                                  | Geçmişin görünürlüğünü açar/kapatır                                                                                |
+| `R`                                  | Grafiği yeniler                                                                                                    |
+| `F`                                  | Menüyü gösterir/gizler                                                                                             |
+| `.`                                  | Görünümü seçime sığdırır (hiçbir şey seçili değilse tüm grafiğe)                                                   |
+| Çift Tıklama LMB                   | Düğüm hızlı arama paletini açar                                                                                    |
+| `Shift` + Drag                       | Birden fazla kabloyu aynı anda taşır                                                                               |
+| `Ctrl` + `Alt` + LMB                   | Tıklanan yuvadaki (slot) tüm kabloların bağlantısını keser                                                         |
 
-`Ctrl` can also be replaced with `Cmd` instead for macOS users
+macOS kullanıcıları için `Ctrl` yerine `Cmd` da kullanılabilir
 
-# Installing
+<a id="installing"></a>
+# Kurulum
 
-## Windows and Mac
+## Windows ve Mac
 
-We highly recommend using the [desktop app](https://comfy.org/download):
+[Masaüstü uygulamasını](https://comfy.org/download) kullanmanızı şiddetle öneririz:
 
-### [Link to Download](https://comfy.org/download)
+### [İndirme Bağlantısı](https://comfy.org/download)
 
-The desktop app is the easiest and best way to use ComfyUI for new users.
+Masaüstü uygulaması, yeni kullanıcılar için ComfyUI'ı kullanmanın en kolay ve en iyi yoludur.
 
 ## Windows Portable
 
-There is a portable standalone build for Windows that should work for running on Nvidia GPUs or for running on your CPU only. It is not recommended for regular users. Regular users should use the desktop app above.
+Windows için, Nvidia GPU'larda ya da yalnızca CPU üzerinde çalışması gereken taşınabilir (portable) bağımsız bir sürüm vardır. Normal kullanıcılar için önerilmez. Normal kullanıcılar yukarıdaki masaüstü uygulamasını kullanmalıdır.
 
-[Direct link to download (nvidia)](https://github.com/comfyanonymous/ComfyUI/releases/latest/download/ComfyUI_windows_portable_nvidia.7z)
+[Doğrudan indirme bağlantısı (nvidia)](https://github.com/comfyanonymous/ComfyUI/releases/latest/download/ComfyUI_windows_portable_nvidia.7z)
 
-Simply download, extract with [7-Zip](https://7-zip.org) or with the windows explorer on recent windows versions and run. For smaller models you normally only need to put the checkpoints (the huge ckpt/safetensors files) in: ComfyUI\models\checkpoints but many of the larger models have multiple files. Make sure to follow the instructions to know which subfolder to put them in ComfyUI\models\
+Yalnızca indirin, [7-Zip](https://7-zip.org) ile veya yeni Windows sürümlerinde Windows gezgini ile çıkarın ve çalıştırın. Küçük modeller için normalde yalnızca checkpoint'leri (devasa ckpt/safetensors dosyaları) şu klasöre koymanız yeterlidir: ComfyUI\models\checkpoints ancak daha büyük modellerin çoğu birden fazla dosyadan oluşur. Hangi alt klasöre koymanız gerektiğini öğrenmek için talimatları takip ettiğinizden emin olun: ComfyUI\models\
 
-If you have trouble extracting it, right click the file -> properties -> unblock
+Çıkarmakta sorun yaşıyorsanız dosyaya sağ tıklayın -> özellikler -> engellemeyi kaldır (unblock)
 
-The portable above currently comes with python 3.13 and pytorch cuda 13.0. Update your Nvidia drivers if it doesn't start.
+Yukarıdaki portable sürüm şu anda python 3.13 ve pytorch cuda 13.0 ile birlikte gelir. Başlamazsa Nvidia sürücülerinizi güncelleyin.
 
-#### All Official Portable Downloads:
+#### Tüm Resmi Portable İndirmeleri:
 
-[Portable for AMD GPUs](https://github.com/comfyanonymous/ComfyUI/releases/latest/download/ComfyUI_windows_portable_amd.7z)
+[AMD GPU'lar için Portable](https://github.com/comfyanonymous/ComfyUI/releases/latest/download/ComfyUI_windows_portable_amd.7z)
 
-[Portable for Intel GPUs](https://github.com/comfyanonymous/ComfyUI/releases/latest/download/ComfyUI_windows_portable_intel.7z)
+[Intel GPU'lar için Portable](https://github.com/comfyanonymous/ComfyUI/releases/latest/download/ComfyUI_windows_portable_intel.7z)
 
-[Portable for Nvidia GPUs](https://github.com/comfyanonymous/ComfyUI/releases/latest/download/ComfyUI_windows_portable_nvidia.7z) (supports 20 series and above).
+[Nvidia GPU'lar için Portable](https://github.com/comfyanonymous/ComfyUI/releases/latest/download/ComfyUI_windows_portable_nvidia.7z) (20 serisi ve üzerini destekler).
 
-[Portable for Nvidia GPUs with pytorch cuda 12.6 and python 3.12](https://github.com/comfyanonymous/ComfyUI/releases/latest/download/ComfyUI_windows_portable_nvidia_cu126.7z) (Supports Nvidia 10 series and older GPUs, DO NOT USE THIS ON NEWER 20 SERIES AND ABOVE GPUS).
+[pytorch cuda 12.6 ve python 3.12 ile Nvidia GPU'lar için Portable](https://github.com/comfyanonymous/ComfyUI/releases/latest/download/ComfyUI_windows_portable_nvidia_cu126.7z) (Nvidia 10 serisi ve daha eski GPU'ları destekler, YENİ 20 SERİSİ VE ÜZERİ GPU'LARDA BUNU KULLANMAYIN).
 
-#### How do I share models between another UI and ComfyUI?
+#### Modelleri başka bir arayüz ile ComfyUI arasında nasıl paylaşırım?
 
-See the [Config file](extra_model_paths.yaml.example) to set the search paths for models. In the standalone windows build you can find this file in the ComfyUI directory. Rename this file to extra_model_paths.yaml and edit it with your favorite text editor.
+Modeller için arama yollarını ayarlamak üzere [yapılandırma dosyasına](extra_model_paths.yaml.example) bakın. Windows bağımsız sürümünde bu dosyayı ComfyUI dizininde bulabilirsiniz. Bu dosyayı extra_model_paths.yaml olarak yeniden adlandırın ve en sevdiğiniz metin düzenleyiciyle düzenleyin.
 
 
 ## [comfy-cli](https://docs.comfy.org/comfy-cli/getting-started)
 
-You can install and start ComfyUI using comfy-cli:
+ComfyUI'ı comfy-cli ile kurabilir ve başlatabilirsiniz:
 ```bash
 pip install comfy-cli
 comfy install
 ```
 
-## Manual Install (Windows, Linux)
+<a id="manual-install-windows-linux"></a>
+## Manuel Kurulum (Windows, Linux)
 
-Python 3.14 works but some custom nodes may have issues. The free threaded variant works but some dependencies will enable the GIL so it's not fully supported.
+Python 3.14 çalışır ancak bazı özel düğümlerde sorunlar olabilir. Free threaded (GIL'siz) varyantı çalışır ancak bazı bağımlılıklar GIL'i etkinleştireceği için tam olarak desteklenmez.
 
-Python 3.13 is very well supported. If you have trouble with some custom node dependencies on 3.13 you can try 3.12
+Python 3.13 çok iyi desteklenir. 3.13'te bazı özel düğüm bağımlılıklarıyla sorun yaşarsanız 3.12'yi deneyebilirsiniz.
 
-torch 2.7 is minimally supported but using a newer version is extremely recommended. Using a cu130 or above version of pytorch is required on Nvidia 20 series and above. Some features and optimizations might only work on newer versions. We generally recommend using the latest major version of pytorch with the latest cuda version unless it is less than 2 weeks old. If your pytorch is more than 6 months old, please update it.
+torch 2.7 asgari düzeyde desteklenir, ancak daha yeni bir sürüm kullanmanız şiddetle tavsiye edilir. Nvidia 20 serisi ve üzerinde pytorch'un cu130 veya üzeri bir sürümünü kullanmak zorunludur. Bazı özellikler ve optimizasyonlar yalnızca daha yeni sürümlerde çalışabilir. Genel olarak, 2 haftadan yeni olmadığı sürece, en son cuda sürümüyle birlikte pytorch'un en son ana sürümünü kullanmanızı öneririz. Pytorch sürümünüz 6 aydan eskiyse lütfen güncelleyin.
 
-### Instructions:
+### Talimatlar:
 
-Git clone this repo.
+Bu depoyu git ile klonlayın.
 
-Put your SD checkpoints (the huge ckpt/safetensors files) in: models/checkpoints
+SD checkpoint'lerinizi (devasa ckpt/safetensors dosyaları) şu klasöre koyun: models/checkpoints
 
-Put your VAE in: models/vae
+VAE'nizi şu klasöre koyun: models/vae
 
 
-### AMD GPUs (Linux)
+### AMD GPU'lar (Linux)
 
-AMD users can install rocm and pytorch with pip if you don't have it already installed, this is the command to install the stable version:
+AMD kullanıcıları, kurulu değilse rocm ve pytorch'u pip ile kurabilir; kararlı sürümü kurmak için komut şudur:
 
 ```pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/rocm7.2```
 
-This is the command to install the nightly with ROCm 7.2 which might have some performance improvements:
+Bazı performans iyileştirmeleri içerebilecek ROCm 7.2'li nightly sürümünü kurmak için komut şudur:
 
 ```pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/rocm7.2```
 
 
-### AMD GPUs (Windows, ROCm 10.0)
+### AMD GPU'lar (Windows, ROCm 10.0)
 
-Use AMD's [multi-architecture PyTorch packages](https://rocm.docs.amd.com/projects/ai-ecosystem/en/latest/frameworks/pytorch/install.html). The `device-*` extras install your GPU's kernels and the matching ROCm runtime automatically; a separate HIP SDK installation is not needed.
+AMD'nin [çoklu mimari PyTorch paketlerini](https://rocm.docs.amd.com/projects/ai-ecosystem/en/latest/frameworks/pytorch/install.html) kullanın. `device-*` ekstraları, GPU'nuzun çekirdeklerini (kernel) ve eşleşen ROCm çalışma zamanını otomatik olarak kurar; ayrıca bir HIP SDK kurulumuna gerek yoktur.
 
-Use Windows 11, a current [AMD graphics driver](https://www.amd.com/en/support/download/drivers.html), and 64-bit Python 3.13.
+Windows 11, güncel bir [AMD grafik sürücüsü](https://www.amd.com/en/support/download/drivers.html) ve 64 bit Python 3.13 kullanın.
 
-The install command below uses `device-all` to install kernels for all supported GPUs. To reduce download size and disk usage, optionally replace **both** occurrences of `device-all` with the target for your GPU:
+Aşağıdaki kurulum komutu, desteklenen tüm GPU'lar için çekirdekleri kurmak üzere `device-all` kullanır. İndirme boyutunu ve disk kullanımını azaltmak için isteğe bağlı olarak `device-all` ifadesinin **her iki** geçtiği yeri de GPU'nuzun hedefiyle değiştirebilirsiniz:
 
 | GPU | Device extra |
 | --- | --- |
@@ -233,207 +234,211 @@ The install command below uses `device-all` to install kernels for all supported
 | RX 7600 / XT | `device-gfx1102` |
 | Ryzen AI Max / Max+ (Strix Halo) | `device-gfx1151` |
 
-**Note:** This table only lists examples. A GPU missing from it may still be supported: supported architectures include RDNA 2, RDNA 3, RDNA 3.5, and RDNA 4. Keep `device-all` to install kernels for all supported targets. For other models, see AMD's [GPU target table](https://github.com/ROCm/TheRock/blob/main/RELEASES.md#gfx-target-lookup-table) and [ROCm compatibility matrix](https://rocm.docs.amd.com/en/docs-10.0.0/compatibility/compatibility-matrix.html).
+**Not:** Bu tablo yalnızca örnekleri listeler. Tabloda yer almayan bir GPU yine de desteklenebilir: desteklenen mimariler arasında RDNA 2, RDNA 3, RDNA 3.5 ve RDNA 4 bulunur. Desteklenen tüm hedefler için çekirdekleri kurmak üzere `device-all` ifadesini koruyun. Diğer modeller için AMD'nin [GPU hedef tablosuna](https://github.com/ROCm/TheRock/blob/main/RELEASES.md#gfx-target-lookup-table) ve [ROCm uyumluluk matrisine](https://rocm.docs.amd.com/en/docs-10.0.0/compatibility/compatibility-matrix.html) bakın.
 
-**ROCm 10.0.0 with PyTorch 2.13:**
+**ROCm 10.0.0 ile PyTorch 2.13:**
 
 ```bat
 pip install --index-url https://stable.repo.amd.com/rocm/whl-next/ "torch[device-all]==2.13.0+rocm10.0.0" "torchvision[device-all]==0.28.0+rocm10.0.0" "torchaudio==2.11.0.2+rocm10.0.0"
 ```
 
-### Intel GPUs (Windows and Linux)
+### Intel GPU'lar (Windows ve Linux)
 
-Intel Arc GPU users can install native PyTorch with torch.xpu support using pip. More information can be found [here](https://pytorch.org/docs/main/notes/get_start_xpu.html)
+Intel Arc GPU kullanıcıları, pip kullanarak torch.xpu destekli yerel PyTorch'u kurabilir. Daha fazla bilgiye [buradan](https://pytorch.org/docs/main/notes/get_start_xpu.html) ulaşabilirsiniz
 
-1. To install PyTorch xpu, use the following command:
+1. PyTorch xpu'yu kurmak için şu komutu kullanın:
 
 ```pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/xpu```
 
-This is the command to install the Pytorch xpu nightly which might have some performance improvements:
+Bazı performans iyileştirmeleri içerebilecek Pytorch xpu nightly sürümünü kurmak için komut şudur:
 
 ```pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/xpu```
 
 ### NVIDIA
 
-Nvidia users should install stable pytorch using this command:
+Nvidia kullanıcıları kararlı pytorch'u şu komutla kurmalıdır:
 
 ```pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu130```
 
-This is the command to install pytorch nightly instead which might have performance improvements.
+Bunun yerine pytorch nightly sürümünü kurmak için komut şudur; performans iyileştirmeleri içerebilir.
 
 ```pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu132```
 
-#### Troubleshooting
+#### Sorun Giderme
 
-If you get the "Torch not compiled with CUDA enabled" error, uninstall torch with:
+"Torch not compiled with CUDA enabled" hatasını alırsanız torch'u şu komutla kaldırın:
 
 ```pip uninstall torch```
 
-And install it again with the command above.
+Ve yukarıdaki komutla yeniden kurun.
 
-### Dependencies
+<a id="dependencies"></a>
+### Bağımlılıklar
 
-Install the dependencies by opening your terminal inside the ComfyUI folder and:
+Terminalinizi ComfyUI klasörünün içinde açarak bağımlılıkları kurun:
 
 ```pip install -r requirements.txt```
 
-After this you should have everything installed and can proceed to running ComfyUI.
+Bundan sonra her şey kurulmuş olmalı ve ComfyUI'ı çalıştırmaya geçebilirsiniz.
 
-### Others:
+### Diğerleri:
 
 #### Apple Mac silicon
 
-You can install ComfyUI in Apple Mac silicon (M1, M2, M3 or M4) with any recent macOS version.
+ComfyUI'ı, yeni sayılabilecek herhangi bir macOS sürümü ile Apple Mac silicon'a (M1, M2, M3 veya M4) kurabilirsiniz.
 
-1. Install pytorch nightly. For instructions, read the [Accelerated PyTorch training on Mac](https://developer.apple.com/metal/pytorch/) Apple Developer guide (make sure to install the latest pytorch nightly).
-1. Follow the [ComfyUI manual installation](#manual-install-windows-linux) instructions for Windows and Linux.
-1. Install the ComfyUI [dependencies](#dependencies). If you have another Stable Diffusion UI [you might be able to reuse the dependencies](#i-already-have-another-ui-for-stable-diffusion-installed-do-i-really-have-to-install-all-of-these-dependencies).
-1. Launch ComfyUI by running `python main.py`
+1. Pytorch nightly'yi kurun. Talimatlar için [Accelerated PyTorch training on Mac](https://developer.apple.com/metal/pytorch/) Apple Developer rehberini okuyun (en son pytorch nightly sürümünü kurduğunuzdan emin olun).
+1. Windows ve Linux için olan [ComfyUI manuel kurulum](#manual-install-windows-linux) talimatlarını izleyin.
+1. ComfyUI [bağımlılıklarını](#dependencies) kurun. Başka bir Stable Diffusion arayüzünüz varsa [bağımlılıkları yeniden kullanabilirsiniz](#i-already-have-another-ui-for-stable-diffusion-installed-do-i-really-have-to-install-all-of-these-dependencies).
+1. ComfyUI'ı `python main.py` komutunu çalıştırarak başlatın
 
-> **Note**: Remember to add your models, VAE, LoRAs etc. to the corresponding Comfy folders, as discussed in [ComfyUI manual installation](#manual-install-windows-linux).
+> **Not**: [ComfyUI manuel kurulum](#manual-install-windows-linux) bölümünde anlatıldığı gibi, modellerinizi, VAE'lerinizi, LoRA'larınızı vb. ilgili Comfy klasörlerine eklemeyi unutmayın.
 
-#### Ascend NPUs
+#### Ascend NPU'lar
 
-For models compatible with Ascend Extension for PyTorch (torch_npu). To get started, ensure your environment meets the prerequisites outlined on the [installation](https://ascend.github.io/docs/sources/ascend/quick_install.html) page. Here's a step-by-step guide tailored to your platform and installation method:
+Ascend Extension for PyTorch (torch_npu) ile uyumlu modeller içindir. Başlamak için, ortamınızın [kurulum](https://ascend.github.io/docs/sources/ascend/quick_install.html) sayfasında belirtilen ön koşulları karşıladığından emin olun. İşte platformunuza ve kurulum yönteminize göre hazırlanmış adım adım bir rehber:
 
-1. Begin by installing the recommended or newer kernel version for Linux as specified in the Installation page of torch-npu, if necessary.
-2. Proceed with the installation of Ascend Basekit, which includes the driver, firmware, and CANN, following the instructions provided for your specific platform.
-3. Next, install the necessary packages for torch-npu by adhering to the platform-specific instructions on the [Installation](https://ascend.github.io/docs/sources/pytorch/install.html#pytorch) page.
-4. Finally, adhere to the [ComfyUI manual installation](#manual-install-windows-linux) guide for Linux. Once all components are installed, you can run ComfyUI as described earlier.
+1. Gerekirse, torch-npu Kurulum sayfasında belirtilen Linux için önerilen veya daha yeni çekirdek (kernel) sürümünü kurarak başlayın.
+2. Sürücü, firmware ve CANN içeren Ascend Basekit'i, platformunuza özel talimatları izleyerek kurun.
+3. Ardından, [Kurulum](https://ascend.github.io/docs/sources/pytorch/install.html#pytorch) sayfasındaki platforma özel talimatlara uyarak torch-npu için gerekli paketleri kurun.
+4. Son olarak, Linux için [ComfyUI manuel kurulum](#manual-install-windows-linux) rehberine uyun. Tüm bileşenler kurulduktan sonra ComfyUI'ı daha önce anlatıldığı gibi çalıştırabilirsiniz.
 
-#### Cambricon MLUs
+#### Cambricon MLU'lar
 
-For models compatible with Cambricon Extension for PyTorch (torch_mlu). Here's a step-by-step guide tailored to your platform and installation method:
+Cambricon Extension for PyTorch (torch_mlu) ile uyumlu modeller içindir. İşte platformunuza ve kurulum yönteminize göre hazırlanmış adım adım bir rehber:
 
-1. Install the Cambricon CNToolkit by adhering to the platform-specific instructions on the [Installation](https://www.cambricon.com/docs/sdk_1.15.0/cntoolkit_3.7.2/cntoolkit_install_3.7.2/index.html)
-2. Next, install the PyTorch(torch_mlu) following the instructions on the [Installation](https://www.cambricon.com/docs/sdk_1.15.0/cambricon_pytorch_1.17.0/user_guide_1.9/index.html)
-3. Launch ComfyUI by running `python main.py`
+1. Cambricon CNToolkit'i, platforma özel talimatları izleyerek kurun: [Kurulum](https://www.cambricon.com/docs/sdk_1.15.0/cntoolkit_3.7.2/cntoolkit_install_3.7.2/index.html)
+2. Ardından PyTorch'u (torch_mlu) şu talimatları izleyerek kurun: [Kurulum](https://www.cambricon.com/docs/sdk_1.15.0/cambricon_pytorch_1.17.0/user_guide_1.9/index.html)
+3. ComfyUI'ı `python main.py` komutunu çalıştırarak başlatın
 
 #### Iluvatar Corex
 
-For models compatible with Iluvatar Extension for PyTorch. Here's a step-by-step guide tailored to your platform and installation method:
+Iluvatar Extension for PyTorch ile uyumlu modeller içindir. İşte platformunuza ve kurulum yönteminize göre hazırlanmış adım adım bir rehber:
 
-1. Install the Iluvatar Corex Toolkit by adhering to the platform-specific instructions on the [Installation](https://support.iluvatar.com/#/DocumentCentre?id=1&nameCenter=2&productId=520117912052801536)
-2. Launch ComfyUI by running `python main.py`
+1. Iluvatar Corex Toolkit'i, platforma özel talimatları izleyerek kurun: [Kurulum](https://support.iluvatar.com/#/DocumentCentre?id=1&nameCenter=2&productId=520117912052801536)
+2. ComfyUI'ı `python main.py` komutunu çalıştırarak başlatın
 
 
 ## [ComfyUI-Manager](https://github.com/Comfy-Org/ComfyUI-Manager/tree/manager-v4)
 
-**ComfyUI-Manager** is an extension that allows you to easily install, update, and manage custom nodes for ComfyUI.
+**ComfyUI-Manager**, ComfyUI için özel düğümleri kolayca kurmanızı, güncellemenizi ve yönetmenizi sağlayan bir eklentidir.
 
-### Setup
+### Kurulum (Setup)
 
-1. Install the manager dependencies:
+1. Manager bağımlılıklarını kurun:
    ```bash
    pip install -r manager_requirements.txt
    ```
 
-2. Enable the manager with the `--enable-manager` flag when running ComfyUI:
+2. ComfyUI'ı çalıştırırken `--enable-manager` bayrağı ile manager'ı etkinleştirin:
    ```bash
    python main.py --enable-manager
    ```
 
-### Command Line Options
+### Komut Satırı Seçenekleri
 
-| Flag | Description |
+| Bayrak | Açıklama |
 |------|-------------|
-| `--enable-manager` | Enable ComfyUI-Manager |
-| `--enable-manager-legacy-ui` | Use the legacy manager UI instead of the new UI (implies `--enable-manager`) |
-| `--disable-manager-ui` | Disable the manager UI and endpoints while keeping background features like security checks and scheduled installation completion (requires `--enable-manager`) |
+| `--enable-manager` | ComfyUI-Manager'ı etkinleştirir |
+| `--enable-manager-legacy-ui` | Yeni arayüz yerine eski manager arayüzünü kullanır (`--enable-manager`'ı da kapsar) |
+| `--disable-manager-ui` | Güvenlik kontrolleri ve zamanlanmış kurulum tamamlama gibi arka plan özelliklerini koruyarak manager arayüzünü ve uç noktalarını devre dışı bırakır (`--enable-manager` gerektirir) |
 
 
-# Running
+# Çalıştırma
 
 ```python main.py```
 
-### For AMD cards not officially supported by ROCm
+### ROCm tarafından resmi olarak desteklenmeyen AMD kartlar için
 
-Try running it with this command if you have issues:
+Sorun yaşarsanız şu komutla çalıştırmayı deneyin:
 
-For 6700, 6600 and maybe other RDNA2 or older: ```HSA_OVERRIDE_GFX_VERSION=10.3.0 python main.py```
+6700, 6600 ve belki diğer RDNA2 veya daha eski kartlar için: ```HSA_OVERRIDE_GFX_VERSION=10.3.0 python main.py```
 
-For AMD 7600 and maybe other RDNA3 cards: ```HSA_OVERRIDE_GFX_VERSION=11.0.0 python main.py```
+AMD 7600 ve belki diğer RDNA3 kartlar için: ```HSA_OVERRIDE_GFX_VERSION=11.0.0 python main.py```
 
-### AMD ROCm Tips
+### AMD ROCm İpuçları
 
-You can try setting this env variable `PYTORCH_TUNABLEOP_ENABLED=1` which might speed things up at the cost of a very slow initial run.
+İşleri hızlandırabilecek `PYTORCH_TUNABLEOP_ENABLED=1` ortam değişkenini ayarlamayı deneyebilirsiniz; bunun bedeli çok yavaş bir ilk çalıştırmadır.
 
-# Notes
+# Notlar
 
-Only parts of the graph that have an output with all the correct inputs will be executed.
+Yalnızca tüm doğru girdilere sahip bir çıktısı olan grafik parçaları çalıştırılır.
 
-Only parts of the graph that change from each execution to the next will be executed, if you submit the same graph twice only the first will be executed. If you change the last part of the graph only the part you changed and the part that depends on it will be executed.
+Yalnızca bir çalıştırmadan diğerine değişen grafik parçaları çalıştırılır; aynı grafiği iki kez gönderirseniz yalnızca ilki çalıştırılır. Grafiğin son kısmını değiştirirseniz yalnızca değiştirdiğiniz kısım ve ona bağlı olan kısım çalıştırılır.
 
-Dragging a generated png on the webpage or loading one will give you the full workflow including seeds that were used to create it.
+Üretilmiş bir png'yi web sayfasına sürükleyip bırakmak veya yüklemek, onu oluşturmak için kullanılan seed'ler dahil tüm iş akışını size verir.
 
-You can use () to change emphasis of a word or phrase like: (good code:1.2) or (bad code:0.8). The default emphasis for () is 1.1. To use () characters in your actual prompt escape them like \\( or \\).
+Bir kelimenin ya da ifadenin vurgusunu değiştirmek için () kullanabilirsiniz, örneğin: (good code:1.2) veya (bad code:0.8). () için varsayılan vurgu 1.1'dir. Gerçek isteminizde () karakterlerini kullanmak için bunları \\( veya \\) şeklinde kaçırın (escape).
 
-You can use {day|night}, for wildcard/dynamic prompts. With this syntax "{wild|card|test}" will be randomly replaced by either "wild", "card" or "test" by the frontend every time you queue the prompt. To use {} characters in your actual prompt escape them like: \\{ or \\}.
+Dinamik/joker (wildcard) istemler için {day|night} kullanabilirsiniz. Bu sözdizimiyle "{wild|card|test}", istemi her kuyruğa eklediğinizde frontend tarafından rastgele "wild", "card" veya "test" ile değiştirilir. Gerçek isteminizde {} karakterlerini kullanmak için bunları şöyle kaçırın: \\{ veya \\}.
 
-Dynamic prompts also support C-style comments, like `// comment` or `/* comment */`.
+Dinamik istemler ayrıca C tarzı yorumları da destekler, örneğin `// comment` veya `/* comment */`.
 
-To use a textual inversion concepts/embeddings in a text prompt put them in the models/embeddings directory and use them in the CLIPTextEncode node like this (you can omit the .pt extension):
+Bir textual inversion kavramını/embedding'ini metin isteminde kullanmak için, onu models/embeddings dizinine koyun ve CLIPTextEncode düğümünde şu şekilde kullanın (.pt uzantısını atlayabilirsiniz):
 
 ```embedding:embedding_filename.pt```
 
 
-## How to show high-quality previews?
+## Yüksek kaliteli önizlemeler nasıl gösterilir?
 
-Use ```--preview-method auto``` to enable previews.
+Önizlemeleri etkinleştirmek için ```--preview-method auto``` kullanın.
 
-The default installation includes a fast latent preview method that's low-resolution. To enable higher-quality previews with [TAESD](https://github.com/madebyollin/taesd), download the [taesd_decoder.pth, taesdxl_decoder.pth, taesd3_decoder.pth and taef1_decoder.pth](https://github.com/madebyollin/taesd/) and place them in the `models/vae_approx` folder. Once they're installed, restart ComfyUI and launch it with `--preview-method taesd` to enable high-quality previews.
+Varsayılan kurulum, düşük çözünürlüklü hızlı bir latent önizleme yöntemiyle gelir. [TAESD](https://github.com/madebyollin/taesd) ile daha yüksek kaliteli önizlemeleri etkinleştirmek için [taesd_decoder.pth, taesdxl_decoder.pth, taesd3_decoder.pth ve taef1_decoder.pth](https://github.com/madebyollin/taesd/) dosyalarını indirin ve `models/vae_approx` klasörüne koyun. Kurulduktan sonra ComfyUI'ı yeniden başlatın ve yüksek kaliteli önizlemeleri etkinleştirmek için `--preview-method taesd` ile çalıştırın.
 
-## How to use TLS/SSL?
-Generate a self-signed certificate (not appropriate for shared/production use) and key by running the command: `openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -sha256 -days 3650 -nodes -subj "/C=XX/ST=StateName/L=CityName/O=CompanyName/OU=CompanySectionName/CN=CommonNameOrHostname"`
+## TLS/SSL nasıl kullanılır?
+Şu komutu çalıştırarak kendinden imzalı bir sertifika (paylaşımlı/üretim ortamları için uygun değildir) ve anahtar oluşturun: `openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -sha256 -days 3650 -nodes -subj "/C=XX/ST=StateName/L=CityName/O=CompanyName/OU=CompanySectionName/CN=CommonNameOrHostname"`
 
-Use `--tls-keyfile key.pem --tls-certfile cert.pem` to enable TLS/SSL, the app will now be accessible with `https://...` instead of `http://...`.
+TLS/SSL'i etkinleştirmek için `--tls-keyfile key.pem --tls-certfile cert.pem` kullanın; uygulamaya artık `http://...` yerine `https://...` ile erişilebilir olacaktır.
 
-> Note: Windows users can use [alexisrolland/docker-openssl](https://github.com/alexisrolland/docker-openssl) or one of the [3rd party binary distributions](https://wiki.openssl.org/index.php/Binaries) to run the command example above.
-<br/><br/>If you use a container, note that the volume mount `-v` can be a relative path so `... -v ".\:/openssl-certs" ...` would create the key & cert files in the current directory of your command prompt or powershell terminal.
+> Not: Windows kullanıcıları, yukarıdaki örnek komutu çalıştırmak için [alexisrolland/docker-openssl](https://github.com/alexisrolland/docker-openssl) veya [3. parti ikili dağıtımlardan](https://wiki.openssl.org/index.php/Binaries) birini kullanabilir.
+<br/><br/>Bir konteyner kullanıyorsanız, `-v` ile bağlanan birimin (volume mount) göreli bir yol olabileceğini unutmayın; yani `... -v ".\:/openssl-certs" ...` komut isteminizin veya powershell terminalinizin geçerli dizininde anahtar ve sertifika dosyalarını oluşturur.
 
-## Support and dev channel
+## Destek ve geliştirici kanalı
 
-[Discord](https://comfy.org/discord): Try the #help or #feedback channels.
+[Discord](https://comfy.org/discord): #help veya #feedback kanallarını deneyin.
 
-[Matrix space: #comfyui_space:matrix.org](https://app.element.io/#/room/%23comfyui_space%3Amatrix.org) (it's like discord but open source).
+[Matrix alanı: #comfyui_space:matrix.org](https://app.element.io/#/room/%23comfyui_space%3Amatrix.org) (discord gibi ama açık kaynaklı).
 
-See also: [https://www.comfy.org/](https://www.comfy.org/)
+Ayrıca bakın: [https://www.comfy.org/](https://www.comfy.org/)
 
-> _psst — we're hiring!_ Help build ComfyUI: [comfy.org/careers](https://www.comfy.org/careers)
+> _psst — işe alım yapıyoruz!_ ComfyUI'ı birlikte geliştirelim: [comfy.org/careers](https://www.comfy.org/careers)
 
-## Frontend Development
+## Frontend Geliştirme
 
-As of August 15, 2024, we have transitioned to a new frontend, which is now hosted in a separate repository: [ComfyUI Frontend](https://github.com/Comfy-Org/ComfyUI_frontend). The compiled JS files (from TS/Vue) are published to [pypi](https://pypi.org/project/comfyui-frontend-package) and installed as a dependency in ComfyUI.
+15 Ağustos 2024 itibarıyla yeni bir frontend'e geçiş yaptık; artık ayrı bir depoda barındırılıyor: [ComfyUI Frontend](https://github.com/Comfy-Org/ComfyUI_frontend). Derlenmiş JS dosyaları (TS/Vue'dan) [pypi](https://pypi.org/project/comfyui-frontend-package) üzerinde yayınlanır ve ComfyUI'a bir bağımlılık olarak kurulur.
 
-### Reporting Issues and Requesting Features
+### Sorun Bildirme ve Özellik Talep Etme
 
-For any bugs, issues, or feature requests related to the frontend, please use the [ComfyUI Frontend repository](https://github.com/Comfy-Org/ComfyUI_frontend). This will help us manage and address frontend-specific concerns more efficiently.
+Frontend ile ilgili her türlü hata, sorun veya özellik talebi için lütfen [ComfyUI Frontend deposunu](https://github.com/Comfy-Org/ComfyUI_frontend) kullanın. Bu, frontend'e özgü konuları daha verimli yönetmemize ve ele almamıza yardımcı olur.
 
-### Using the Latest Frontend
+### En Son Frontend'i Kullanma
 
-The new frontend is now the default for ComfyUI. However, please note:
+Yeni frontend artık ComfyUI için varsayılandır. Ancak lütfen şunlara dikkat edin:
 
-1. The frontend in the main ComfyUI repository is updated fortnightly.
-2. Daily releases are available in the separate frontend repository.
+1. Ana ComfyUI deposundaki frontend iki haftada bir güncellenir.
+2. Günlük sürümler ayrı frontend deposunda mevcuttur.
 
-To use the most up-to-date frontend version:
+En güncel frontend sürümünü kullanmak için:
 
-1. For the latest daily release, launch ComfyUI with this command line argument:
+1. En son günlük sürüm için ComfyUI'ı şu komut satırı argümanıyla başlatın:
 
    ```
    --front-end-version Comfy-Org/ComfyUI_frontend@latest
    ```
 
-2. For a specific version, replace `latest` with the desired version number:
+2. Belirli bir sürüm için `latest` yerine istediğiniz sürüm numarasını yazın:
 
    ```
    --front-end-version Comfy-Org/ComfyUI_frontend@1.2.2
    ```
 
-This approach allows you to easily switch between the stable fortnightly release and the cutting-edge daily updates, or even specific versions for testing purposes.
+Bu yaklaşım, kararlı iki haftalık sürüm ile en yeni günlük güncellemeler arasında ya da test amacıyla belirli sürümler arasında kolayca geçiş yapmanızı sağlar.
 
-# QA
+# SSS
 
-### Which GPU should I buy for this?
+### Bunun için hangi GPU'yu almalıyım?
+
+[Bazı öneriler için bu sayfaya bakın](https://github.com/comfyanonymous/ComfyUI/wiki/Which-GPU-should-I-buy-for-ComfyUI)
+
 
 [See this page for some recommendations](https://github.com/comfyanonymous/ComfyUI/wiki/Which-GPU-should-I-buy-for-ComfyUI)
